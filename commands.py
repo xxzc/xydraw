@@ -3,7 +3,7 @@
 CMD_MOVETO = 'G1 X{pos[0]} Y{pos[1]}'
 CMD_UPPEN = 'M5 G4 P{penwait}'
 CMD_DOWNPEN = 'M3 S255 G4 P{penwait}'
-CMD_INIT = 'M5 G4 P{penwait} G90 G21 G1 F{speed}'
+CMD_INIT = 'M5 G4 P{penwait} G90 G21 G1 F{speed}\n'
 class Commands:
     def __init__(self, **para):
         self.para = {'penwait': 0.2,

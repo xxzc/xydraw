@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Main",
+            "name": "gen_img",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/main.py",
+            "program": "${workspaceFolder}/gen_img.py",
             "args": [
                 "data/data.png",
                 "data/out.gcode"
