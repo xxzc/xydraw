@@ -15,8 +15,9 @@ if __name__ == '__main__':
 
     for x in range(img.size[0]):
         for y in range(img.size[1]):
-            code.do(CMD_MOVETO, x=x*xres, y=y*xres)
-            code.do(CMD_DOWNPEN)
-            code.do(CMD_UPPEN)
+            if img[x,y] >0:
+                code.do(CMD_MOVETO, x=x*xres, y=y*xres)
+                code.do(CMD_DOWNPEN)
+                code.do(CMD_UPPEN)
 
     code.save(fncode)
