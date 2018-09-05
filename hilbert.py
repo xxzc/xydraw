@@ -20,7 +20,7 @@ def d2xy(n, d):
     take a d value in [0, n**2 - 1] and map it to
     an x, y value (e.g. c, r).
     """
-    assert(d <= n**2 - 1)
+    #assert(d <= n**2 - 1)
     t = d
     x = y = 0
     s = 1
@@ -41,12 +41,16 @@ if __name__ == '__main__':
     
     code = Commands()
     code.do(CMD_DOWNPEN)
-    n=3
-    for d in range(n*n-1):
+    m=4
+    n=2**m
+    for d in range(n*n):
         x,y = d2xy(n,d)
         print(x,y)
+        #code.do(CMD_DOWNPEN)
         code.do(CMD_MOVETO, pos=topos(x,y))
+        #code.do(CMD_UPPEN)
+        code.do(CMD_WAIT)
     
     code.do(CMD_UPPEN)
     code.do(CMD_MOVETO, pos=(0,0))
-    code.save('data/hilbert.gcode')
+    code.save('data/hilbert2.gcode')

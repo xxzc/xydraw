@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/gen_img.py",
             "args": [
-                "data/data.png",
+                "D:\\doc\\black.png",
                 "data/out.gcode"
             ]
         },
