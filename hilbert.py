@@ -45,15 +45,18 @@ if __name__ == '__main__':
     
     code = Commands()
     code.do(CMD_DOWNPEN)
-    m=4
+    m=6
     n=2**m
-    for d in range(n*n):
-        x,y = d2xy(n,d)
-        print(x,y)
-        #code.do(CMD_DOWNPEN)
-        code.do(CMD_MOVETO, pos=rotate(topos(x,y),pi/4))
+    for d in range(n*n-1):
+        
+        
         #code.do(CMD_UPPEN)
-        code.do(CMD_WAIT)
+        #code.do(CMD_MOVETO, pos=rotate(topos(*d2xy(n,d)),0*pi/4))
+        #code.do(CMD_DOWNPEN)
+        code.do(CMD_MOVETO, pos=rotate(topos(*d2xy(n,d+1)),0*pi/4))
+        #code.do(CMD_UPPEN)
+        #code.do(CMD_MOVETO, pos=(0,0))
+        #code.do(CMD_WAIT)
         
     
     code.do(CMD_UPPEN)

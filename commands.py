@@ -1,6 +1,6 @@
 
 
-CMD_MOVETO = 'G1 X{pos[0]} Y{pos[1]}'
+CMD_MOVETO = 'G1 X{pos[0]:.5f} Y{pos[1]:.5f}'
 CMD_UPPEN = 'M5 G4 P{penwait}'
 CMD_DOWNPEN = 'M3 S255 G4 P{penwait}'
 CMD_WAIT = 'G4 P{waittime}'
@@ -28,6 +28,6 @@ class Commands:
         with open(fname, 'w') as f:
             f.write(self.gcode)
 
-    
+
 
     
