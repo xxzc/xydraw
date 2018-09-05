@@ -1,5 +1,5 @@
 from commands import *
-
+from math import cos,sin,pi
 #https://github.com/dentearl/simpleHilbertCurve/blob/master/src/simpleHilbertCurve.py
 
 def rot(n, x, y, rx, ry):
@@ -34,6 +34,10 @@ def d2xy(n, d):
         s *= 2
     return x, y
 
+def rotate(pos, deg):
+    x,y = pos
+    return (x*cos(deg)-y*sin(deg),x*sin(deg)+y*cos(deg))
+
 if __name__ == '__main__':
     pinv = 1.0
     def topos(x,y):
@@ -45,7 +49,7 @@ if __name__ == '__main__':
     for d in range(n*n-1):
         x,y = d2xy(n,d)
         print(x,y)
-        code.do(CMD_MOVETO, pos=topos(x,y))
+        code.do(CMD_MOVETO, pos=rotate(topos(x,y),pi/4))
     
     code.do(CMD_UPPEN)
     code.do(CMD_MOVETO, pos=(0,0))
