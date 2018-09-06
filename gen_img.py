@@ -5,8 +5,12 @@ import sys
 
 
 if __name__ == '__main__':
-    fnimg = sys.argv[1]
-    fncode = sys.argv[2]
+    if len(sys.argv) == 3:
+        fnimg = sys.argv[1]
+        fncode = sys.argv[2]
+    else:
+        fnimg = './data/data.png'
+        fncode = './data/out.gcode'
 
     img = Image.open(fnimg)
     px = img.load()

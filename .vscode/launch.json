@@ -5,30 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gen_img",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/gen_img.py",
-            "args": [
-                "D:\\doc\\black.png",
-                "data/out.gcode"
-            ]
-        },
-        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
             "program": "${file}"
-        },
-        {
-            "name": "Python: Attach",
-            "type": "python",
-            "request": "attach",
-            "localRoot": "${workspaceFolder}",
-            "remoteRoot": "${workspaceFolder}",
-            "port": 3000,
-            "secret": "my_secret",
-            "host": "localhost"
         }
     ]
 }
