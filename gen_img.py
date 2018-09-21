@@ -2,15 +2,18 @@ from commands import *
 from PIL import Image
 import sys
 
+def isblack(pix):
+    return pix == (0, 0, 0, 255) or pix == (0, 0, 0) or pix == 0
 
 def emit_dot(cmd, img):
-    pinv = 0.5
+    pinv = 0.45
+    cmd.setto(penwait=0.2,speed=6000)
     def topos(x,y):
         return (pinv*x, pinv*(img.size[1]-y-1))
     for y in range(img.size[1]):
         for x in range(img.size[0]) if y%2==0 else range(img.size[0]-1, -1, -1):
-            if img.getpixel((x,y)) == 0:
-                print(x,y, img.getpixel((x,y)))
+            #print(x,y, img.getpixel((x,y)))
+            if isblack(img.getpixel((x,y))):
                 cmd.do(CMD_UPPEN)
                 cmd.do(CMD_MOVETO, pos=topos(x,y))
                 cmd.do(CMD_DOWNPEN)
@@ -52,8 +55,8 @@ if __name__ == '__main__':
         fnimg = sys.argv[1]
         fncode = sys.argv[2]
     else:
-        fnimg = './data/data.png'
-        fncode = './data/out.gcode'
+        fnimg = 'D:\\Downloads\\out2.png'
+        fncode = 'D:\\Downloads\\out.gcode'
 
     img = Image.open(fnimg)
     px = img.load()
