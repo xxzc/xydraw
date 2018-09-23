@@ -39,13 +39,13 @@ def rotate(pos, deg):
     return (x*cos(deg)-y*sin(deg),x*sin(deg)+y*cos(deg))
 
 if __name__ == '__main__':
-    pinv = 1.0
+    pinv = 0.6
     def topos(x,y):
         return (pinv*x, pinv*y)
     
     code = Commands()
     code.do(CMD_DOWNPEN)
-    m=6
+    m=7
     n=2**m
     for d in range(n*n-1):
         
@@ -63,4 +63,4 @@ if __name__ == '__main__':
     
     code.do(CMD_UPPEN)
     code.do(CMD_MOVETO, pos=(0,0))
-    code.save('data/hilbert2.gcode')
+    code.save('D:\\Downloads\\hilbert2.gcode')
