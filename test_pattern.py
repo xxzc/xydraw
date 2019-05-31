@@ -52,8 +52,9 @@ def test_net(code):
 
 if __name__ == '__main__':
     #data = load_img('data/data.png')
-    fncode = 'D:\\Downloads\\tp.gcode'
+    fncode = 'D:\\xydraw\\tp.gcode'
     code = Commands()
 
-    test_net(code)
+    #test_net(code)
+    test_pattern(code)
     code.save(fncode)
